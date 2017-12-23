@@ -27,6 +27,15 @@ int main() {
     std::ofstream myfile;
     myfile.open ("results.txt");
 
+    /*
+     Tablica zestawow danych -> tabelki 1 i 2
+    nalezy ja uzupelnic dla algorytmow APD oraz AZ
+
+     Przeprowadzenie eksperymentu dla algorytmu AP
+    dla zestawow wiekszych niz {25, 100} nie przyniesie rezultatow
+     ze wzgledu na dlugi czas wykonania (kilka dni+)
+    */
+
     UI dane[8][2]{
             {10,    10},
             {10,    20},
@@ -36,9 +45,11 @@ int main() {
             {25,    50},
             {25,    75},
             {25,    100}
+            // dla algorytmow APD oraz AZ trzeba tu dopisac zestawy {2500, 2500} itd.
     };
 
     for (int i = 0; i < 8; i++) {
+    //tutaj musi byc i < ilosc zestawow z tablicy dane
         cout <<"\n\n****************************\n";
         cout << "projekty: " << dane[i][0] << " budzet: " << dane[i][1] << endl;
         cout <<"****************************\n";
@@ -71,6 +82,7 @@ int main() {
             }
 
             //algorytm AP
+            //Nalezy caly ten fragment wykomentowac dla zestawow > {25 ,100}
 
             status = false;
             while (!status) {
